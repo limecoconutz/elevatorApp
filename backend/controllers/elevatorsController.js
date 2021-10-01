@@ -1,11 +1,9 @@
 const elevators = require('../db_mock/elevators.json');
 
-
 const notFound = id => `id of ${id} not found`;
 const findElevatorByID = id => elevators.find(el => el.id === id);
 const findElevatorsByFloor = floor => elevators.filter(el => el.floor === floor);
 const findElevatorsByStatus = status => elevators.filter(el => el.status === status);
-const floors = Array(20).fill(null).map((_, i) => i+1);
 
 const getElevators = (req, res) => {
   res.json(elevators);
@@ -82,31 +80,3 @@ module.exports = {
   moveElevatorUp,
   moveElevator
 }
-
-// [
-//   {
-//      id:1,
-//      status:"stationary",
-//      floor:3
-//   },
-//   {
-//      id:2,
-//      status:"stationary",
-//      floor:1
-//   },
-//   {
-//      id:3,
-//      status:"stationary",
-//      floor:20
-//   },
-//   {
-//      id:4,
-//      status:"stationary",
-//      floor:1
-//   },
-//   {
-//      id:5,
-//      status:"stationary",
-//      floor:1
-//   }
-// ]
